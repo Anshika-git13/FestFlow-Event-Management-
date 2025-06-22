@@ -12,7 +12,7 @@ app.use(express.json());
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB connected"))
-  .catch((err) => console.log("❌ MongoDB connection error:", err));
+  .catch((err) => console.log(" MongoDB connection error:", err));
 
 
 const eventRoutes = require('./routes/EventRoutes');
