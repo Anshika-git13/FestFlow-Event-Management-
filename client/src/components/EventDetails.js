@@ -12,19 +12,19 @@ const EventDetails = () => {
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
-   
-    axios.get(`${process.env.REACT_APP_API_URL}/events`)
-
-
+    axios
+      .get(`${process.env.REACT_APP_API_URL}/events/${id}`)
       .then(res => {
-        setEvent(res.data);
+        setEvent(res.data); // ✅ now this is one single event
         setLoading(false);
       })
       .catch(err => {
-        setError('Event not found');
+        console.error("Error fetching event:", err);
+        setError("Event not found");
         setLoading(false);
       });
   }, [id]);
+  
 
   if (loading) return <p>Loading event details...</p>;
   if (error) return <h2 className="not-found">{error}</h2>;
