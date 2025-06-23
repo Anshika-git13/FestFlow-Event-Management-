@@ -24,15 +24,14 @@ function CreateEventForm({ onAddEvent }) {
 
     try {
       const { data } = await createEvent(form);
-      onAddEvent(data); // add the new event to list
+      onAddEvent(data);
       alert("🎉 Event Created!");
       setForm({ title: "", date: "", location: "", imageUrl: "" });
+    } catch (err) {
+      console.error("Error creating event:", err);
+      alert("Failed to create event!");
     }
-    .catch ((err) => {
-      console.error("Error creating event:", err); // Shows full error object
-      setError("Failed to create event. Please try again."); // Shows UI error (if you're using setError)
-    });
-    
+  };
 
   return (
     <form className="create-event-form" onSubmit={handleSubmit}>
