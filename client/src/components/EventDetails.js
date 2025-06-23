@@ -13,7 +13,9 @@ const EventDetails = () => {
 
   useEffect(() => {
    
-    axios.get(`http://localhost:5000/api/events/${id}`)
+    axios.get(`${process.env.REACT_APP_API_URL}/events`)
+
+
       .then(res => {
         setEvent(res.data);
         setLoading(false);
