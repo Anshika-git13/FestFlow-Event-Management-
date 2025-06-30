@@ -68,7 +68,7 @@
     box-shadow: 0 5px 20px #b388ff88;
 }
 
-/* Recommended Result */
+
 .result {
     margin-top: 1.5rem;
     padding: 1rem;
@@ -88,7 +88,7 @@
     color: #f8fafc;
 }
 
-/* Fade + Slide animation */
+
 @keyframes fadeInSlide {
     from {
         opacity: 0;
@@ -101,7 +101,7 @@
     }
 }
 
-/* Responsive */
+
 @media (max-width: 600px) {
     .create-event-form {
         padding: 1.5rem;

@@ -15,7 +15,7 @@ const EventDetails = () => {
     axios.get ("https://festflow-us6s.onrender.com")
 
       .then(res => {
-        setEvent(res.data); // ✅ now this is one single event
+        setEvent(res.data); 
         setLoading(false);
       })
       .catch(err => {
